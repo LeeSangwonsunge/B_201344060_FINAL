@@ -137,11 +137,11 @@ public class MainActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(etx1.getText().toString()==null)
+                if(etx1.getText().toString().equals(null))
                     check2=1;
-                if(etx2.getText().toString()==null)
+                else if(etx2.getText().toString().equals(null))
                     check2=1;
-                if(etx3.getText().toString()==null)
+                else if(etx3.getText().toString().equals(null))
                     check2=1;
                 if(check2==1){
                     Toast.makeText(MainActivity.this,"인원수를 입력해주세요",Toast.LENGTH_SHORT).show();
