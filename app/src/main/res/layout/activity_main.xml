@@ -38,6 +38,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:visibility="visible"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -123,6 +124,7 @@
                     android:layout_height="wrap_content" >
 
                     <RadioButton
+                        android:checked="true"
                         android:text="기본할인(5% 할인)"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -196,6 +198,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:visibility="invisible"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -212,14 +215,15 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:text="RadioButton"
+                    android:checked="true"
+                    android:text="일자설정"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/radioButton4"
                     android:layout_weight="1" />
 
                 <RadioButton
-                    android:text="RadioButton"
+                    android:text="시간설정"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/radioButton5"
@@ -231,11 +235,13 @@
                 android:layout_height="wrap_content">
 
                 <CalendarView
+                    android:visibility="visible"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/calendarView" />
 
                 <TimePicker
+                    android:visibility="invisible"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/timePicker" />
