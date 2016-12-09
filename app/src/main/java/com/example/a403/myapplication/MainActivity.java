@@ -81,7 +81,10 @@ public class MainActivity extends AppCompatActivity {
                     cro1.setBase(SystemClock.elapsedRealtime());
                     cro1.start();
                     cro1.setTextColor(Color.parseColor("#FF0000"));
+
                 } else {
+                    lay1.setVisibility(View.INVISIBLE);
+                    lay2.setVisibility(View.INVISIBLE);
                     etx1.setText("");
                     etx2.setText("");
                     etx3.setText("");
@@ -89,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     tx1.setText("총 명수:" );
                     tx2.setText("할임금액:");
                     tx3.setText("결제금액:");
-
+                    check1=0;
                 }
             }
         });
@@ -137,11 +140,11 @@ public class MainActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(etx1.getText().toString().equals(null))
+                if(etx1.getText().toString().equals(""))
                     check2=1;
-                else if(etx2.getText().toString().equals(null))
+                else if(etx2.getText().toString().equals(""))
                     check2=1;
-                else if(etx3.getText().toString().equals(null))
+                else if(etx3.getText().toString().equals(""))
                     check2=1;
                 if(check2==1){
                     Toast.makeText(MainActivity.this,"인원수를 입력해주세요",Toast.LENGTH_SHORT).show();
