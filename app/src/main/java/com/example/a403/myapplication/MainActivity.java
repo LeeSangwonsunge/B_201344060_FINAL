@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     int price=0;
     ImageView img;
     int hou, min, yea, mon, day;
-    int check1=0;
+    int check1=0, check2=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked=true){
                     lay1.setVisibility(View.VISIBLE);
+                    lay2.setVisibility(View.INVISIBLE);
                     cro1.setBase(SystemClock.elapsedRealtime());
                     cro1.start();
                     cro1.setTextColor(Color.parseColor("#FF0000"));
@@ -120,23 +121,29 @@ public class MainActivity extends AppCompatActivity {
         rd4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                cal1.setVisibility(View.VISIBLE);
-                tim1.setVisibility(View.INVISIBLE);
+                cal1.setVisibility(View.INVISIBLE);
+                tim1.setVisibility(View.VISIBLE);
             }
         });
 
         rd5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                cal1.setVisibility(View.INVISIBLE);
-                tim1.setVisibility(View.VISIBLE);
+                cal1.setVisibility(View.VISIBLE);
+                tim1.setVisibility(View.INVISIBLE);
             }
         });
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(etx1.getText().toString()==null||etx2.getText().toString()==null||etx3.getText().toString()==null){
+                if(etx1.getText().toString()==null)
+                    check2=1;
+                if(etx2.getText().toString()==null)
+                    check2=1;
+                if(etx3.getText().toString()==null)
+                    check2=1;
+                if(check2==1){
                     Toast.makeText(MainActivity.this,"인원수를 입력해주세요",Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -147,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                     cro1.setTextColor(Color.parseColor("#0000FF"));
                     total = adult + semiadult + child;
                     origprice = (adult * 15000) + (semiadult * 12000) + (child * 6000);
-                    discount = origprice / disco;
+                    discount = (origprice / 100) * disco;
                     price = origprice - discount;
                     tx1.setText("총 명수:" + total);
                     tx2.setText("할임금액:" + discount);
