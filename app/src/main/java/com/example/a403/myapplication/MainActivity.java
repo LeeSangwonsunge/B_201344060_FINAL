@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         sw1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked=true){
+                if(isChecked){
                     lay1.setVisibility(View.VISIBLE);
                     lay2.setVisibility(View.INVISIBLE);
                     cro1.setBase(SystemClock.elapsedRealtime());
@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
                     cro1.setTextColor(Color.parseColor("#FF0000"));
 
                 } else {
+                    cro1.setBase(SystemClock.elapsedRealtime());
+                    cro1.stop();
                     lay1.setVisibility(View.INVISIBLE);
                     lay2.setVisibility(View.INVISIBLE);
                     etx1.setText("");
