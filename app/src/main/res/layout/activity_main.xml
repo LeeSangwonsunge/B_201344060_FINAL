@@ -43,7 +43,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:text="Button"
+                android:text="인원예약"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/button" />
@@ -157,7 +157,41 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></LinearLayout>
+                android:layout_height="match_parent">
+
+                <Button
+                    android:text="예약완료"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button2"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:text="시간예약 GO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button3"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <TextView
+                android:text="총 명수:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5" />
+
+            <TextView
+                android:text="할인금액 :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView6" />
+
+            <TextView
+                android:text="결제금액:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView7" />
 
         </LinearLayout>
 
